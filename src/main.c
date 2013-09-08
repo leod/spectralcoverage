@@ -1,5 +1,6 @@
 #include "graphics.h"
 #include "error.h"
+#include "world.h"
 
 #include <SDL/SDL.h>
 
