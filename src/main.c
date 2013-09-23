@@ -1,6 +1,7 @@
 #include "graphics.h"
 #include "error.h"
 #include "world.h"
+#include "net.h"
 
 #include <SDL/SDL.h>
 
