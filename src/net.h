@@ -6,6 +6,8 @@
 #include "command.h"
 #include "sim.h"
 
+#define NET_STANDARD_PORT 12345
+
 typedef enum MessageType {
     MT_SETUP,
     MT_COMMAND,
