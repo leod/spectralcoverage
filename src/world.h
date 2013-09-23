@@ -1,9 +1,14 @@
 #ifndef _OBJECT_H
 #define _OBJECT_H
 
+#include <stdbool.h>
+
 #define NUM_LAYERS 3
 
+typedef int PlayerID;
+
 typedef enum ObjectType {
+    OT_NULL,
     OT_PIPE,
     OT_CORE,
     OT_ATT,
@@ -11,8 +16,12 @@ typedef enum ObjectType {
     OT_RES
 } ObjectType;
 
+typedef struct Coords {
+    int x, y, z;
+} Coords;
+
 typedef struct Object {
-    ObjectType type; 
+    ObjectType type;
 
     union {
         struct PipeObject {
@@ -47,5 +56,10 @@ typedef struct Map {
 
     Layer layers[NUM_LAYERS]; 
 } Map;
+
+Object* map_get_object(Map *map, const Coords *coords);
+Object* map_try_get_object(Map *map, const Coords *coords);
+
+bool map_is_pipe_adjacent(Map *map, const Coords *coords, PlayerID owner);
 
 #endif
