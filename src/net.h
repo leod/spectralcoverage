@@ -1,6 +1,8 @@
 #ifndef _NET_H
 #define _NET_H
 
+#include <enet/enet.h>
+
 #include "command.h"
 #include "sim.h"
 
@@ -31,6 +33,8 @@ typedef struct Message {
     };
 } Message;
 
+ENetPacket *net_message_to_packet(const Message *message);
+Message net_packet_to_message(const ENetPacket *packet);
 
 
 #endif
