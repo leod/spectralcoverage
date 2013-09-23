@@ -2,7 +2,7 @@ CFLAGS := -Wall -g
 CC := gcc
 LN := gcc
 
-OBJ = error.o graphics.o main.o
+OBJ = error.o graphics.o main.o world.o
 
 all: sc
 
