@@ -1,8 +1,12 @@
 #ifndef _SIM_H
 #define _SIM_H
 
+#include <stdint.h>
+
 #include "world.h"
 #include "command.h"
+
+typedef int32_t Tick;
 
 typedef struct SimState {
     Map map;
